@@ -1,5 +1,9 @@
 #!/bin/sh
 
+add-apt-repository ppa:ondrej/php -y
+apt-get update
+apt-get install php8.1 php8.1-dev php8.1-xml -y --allow-unauthenticated
+
 
 arrow() {
   echo '----->' "$@"
