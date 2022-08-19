@@ -27,5 +27,5 @@ arrow "copied msodbcsqlr${MS_ODBC_VERSION}.rll"
 
 mkdir -p "${BUILD_DIR}/.profile.d" | indent
 cp .profile.d/configure-odbc.sh "${BUILD_DIR}/.profile.d" | indent
-arrow "copied profile.d"
+arrow "copied profile.d !!!!!!!"
 arrow "Finished adding ODBC Driver ${MS_ODBC_VERSION} for SQL Server"
