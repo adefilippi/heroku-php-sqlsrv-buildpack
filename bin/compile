@@ -17,13 +17,6 @@ for f in ${BUILD_DIR}/.apt/opt/microsoft/*; do
 	break;
 done
 
-curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
-apt-get update
-sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
-ACCEPT_EULA=Y apt-get install -y mssql-tools18
-apt-get install -y unixodbc-dev
-
 arrow "Starting adding ODBC Driver ${MS_ODBC_VERSION} for SQL Server"
 mkdir -p "${BUILD_DIR}/.apt/usr/lib/odbc/conf/" | indent
 mkdir -p "${BUILD_DIR}/.apt/usr/share/resources/en_US/" | indent
