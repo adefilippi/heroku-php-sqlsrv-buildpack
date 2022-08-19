@@ -12,7 +12,8 @@ indent() {
 BUILD_DIR=$1
 
 # Get microsoft ODBC diver version
-for f in ${BUILD_DIR}/.apt/opt/microsoft/*; do 
+for f in ${BUILD_DIR}/.apt/opt/microsoft/*; do
+  echo $f
 	MS_ODBC_VERSION=$(echo "$(basename $f)" | grep -o -E '[0-9]+')
 	break;
 done
