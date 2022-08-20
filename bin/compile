@@ -38,6 +38,3 @@ mkdir -p ./.heroku/php/
 mkdir -p ./.heroku/php/etc/php/conf.d
 tar -xvf ext-pdo_sqlsrv-5.10.1_php-8.1.tar.gz -C ./.heroku/php/
 echo extension=pdo_sqlsrv.so >> ./.heroku/php/etc/php/conf.d/100-ext-sqlsrv.ini
-
-
-apt-get install php-pear -y
