@@ -34,8 +34,11 @@ arrow "Finished adding ODBC Driver ${MS_ODBC_VERSION} for SQL Server"
 
 wget  https://www.lunamy.com/sqlsrv.so
 wget  https://www.lunamy.com/pdo_sqlsrv.so
+
+mkdir -p ./.heroku/php/lib/php/extensions/no-debug-non-zts-20210902
 cp sqlsrv.so ./.heroku/php/lib/php/extensions/no-debug-non-zts-20210902/
 cp pdo_sqlsrv.so ./.heroku/php/lib/php/extensions/no-debug-non-zts-20210902/
+mkdir -p /app/.heroku/php/etc/php/conf.d/
 printf "extension=sqlsrv\n" > /app/.heroku/php/etc/php/conf.d/120-sqlsrv.ini
 printf "extension=pdo_sqlsrv\n" > /app/.heroku/php/etc/php/conf.d/120-pdo_sqlsrv.ini
 
