@@ -36,14 +36,14 @@ arrow "Download so files"
 wget  https://www.lunamy.com/sqlsrv.so
 wget  https://www.lunamy.com/pdo_sqlsrv.so
 
-mkdir -p ./libSupp
+mkdir -p ${BUILD_DIR}/.libSupp
 arrow "copy sqlsrv"
-cp sqlsrv.so ./libSupp
+cp sqlsrv.so ${BUILD_DIR}/.libSupp
 arrow "copy pdo sqlsrv"
-cp pdo_sqlsrv.so ./libSupp
-mkdir -p /app/.heroku/php/etc/php/conf.d/
-printf "extension=/app/libSupp/sqlsrv.so\n" > /app/.heroku/php/etc/php/conf.d/120-sqlsrv.ini
-printf "extension=/app/libSupp/pdo_sqlsrv.so\n" > /app/.heroku/php/etc/php/conf.d/120-pdo_sqlsrv.ini
+cp pdo_sqlsrv.so ${BUILD_DIR}/.libSupp
+#mkdir -p ${BUILD_DIR}/.heroku/php/etc/php/conf.d/
+printf "extension=/app/libSupp/sqlsrv.so\n" > ${BUILD_DIR}/.heroku/php/etc/php/conf.d/120-sqlsrv.ini
+printf "extension=/app/libSupp/pdo_sqlsrv.so\n" > ${BUILD_DIR}/.heroku/php/etc/php/conf.d/120-pdo_sqlsrv.ini
 
 rm sqlsrv.so
 rm pdo_sqlsrv.so
