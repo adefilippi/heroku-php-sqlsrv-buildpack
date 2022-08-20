@@ -30,3 +30,8 @@ mkdir -p "${BUILD_DIR}/.profile.d" | indent
 cp .profile.d/configure-odbc.sh "${BUILD_DIR}/.profile.d" | indent
 arrow "copied profile.d !!!!!!!"
 arrow "Finished adding ODBC Driver ${MS_ODBC_VERSION} for SQL Server"
+
+arrow "Download .so"
+wget  https://github.com/robuust/heroku-php/raw/pdo_sqlsrv/packages/ext-pdo_sqlsrv-5.10.1_php-8.1.tar.gz
+tar -xvf ext-pdo_sqlsrv-5.10.1_php-8.1.tar.gz -C ./.heroku/php/
+echo extension=pdo_sqlsrv.so >> ./.heroku/php/etc/php/conf.d/100-ext-sqlsrv.ini
